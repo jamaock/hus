@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.hus.erp.model.TaskTxt" table="TASK_TXT" schema="HUS" dynamic-insert="true" dynamic-update="true">
+		<id name="tsktxtId" type="java.lang.Integer">
+			<column name="TSKTXT_ID" precision="10" scale="0" />
+			<generator class="native">
+				<param name="sequence">SEQ_TASKTXT_TSKTXTID</param>
+			</generator>
+		</id>
+		<many-to-one name="task" class="com.hus.erp.model.Task"
+			fetch="select" lazy="false">
+			<column name="TSK_ID" precision="15" scale="0" not-null="true" />
+		</many-to-one>
+		<property name="status" type="java.lang.String">
+			<column name="STATUS" length="1" />
+		</property>
+		<property name="created" type="java.util.Date">
+			<column name="CREATED" length="7" />
+		</property>
+		<property name="lastmod" type="java.util.Date">
+			<column name="LASTMOD" length="7" />
+		</property>
+		<property name="tskName" type="java.lang.String">
+			<column name="TSK_NAME" length="55" not-null="true" />
+		</property>
+		<property name="tskOname" type="java.lang.String">
+			<column name="TSK_ONAME" length="55" />
+		</property>
+		<property name="tskNote" type="java.lang.String">
+			<column name="TSK_NOTE" length="2000" />
+		</property>
+		<property name="langCode" type="java.lang.String">
+			<column name="LANG_CODE" length="8" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>
