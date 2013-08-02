@@ -41,6 +41,10 @@ function addTab(tid,title,url){
 body{margin-top:0;margin-left:auto;}
 /*设置tabbar不变*/
 .dhx_tablist_zone{position: fixed;}
+.dhxcont_main_content{overflow: visible;}
+/*  onload="this.height=0;var fdh=(this.Document?this.Document.body.scrollHeight:this.contentDocument.body.offsetHeight);this.height=(fdh>700?fdh:700)"
+ */
+ .dhxcont_main_content iframe{height: 10000%;}
 </style>
 </head>
 <body style="background-color: #FFF;">
