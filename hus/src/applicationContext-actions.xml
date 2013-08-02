@@ -10,4 +10,7 @@
     <bean id="taskAction" class="com.hus.erp.action.TaskAction" scope="prototype">
         <constructor-arg ref="taskService"></constructor-arg>
     </bean>
+    <bean id="quoteAction" class="com.hus.erp.action.sale.QuoteAction" scope="prototype">
+        <constructor-arg ref="quoteService"></constructor-arg>
+    </bean>
   </beans>

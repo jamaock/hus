@@ -34,6 +34,7 @@ window.onload=function(){
 function addTab(tid,title,url){
         tabbar.addTab(tid, title, "100px");
         tabbar.setContentHref(tid,url);
+        tabbar.setTabActive(tid);
 }
 </script>
 <style type="text/css">

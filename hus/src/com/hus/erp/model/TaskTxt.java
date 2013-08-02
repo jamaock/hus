@@ -33,6 +33,8 @@ public class TaskTxt implements java.io.Serializable
     
     private String langCode;
     
+    private String tskTitle;
+    
     // Constructors
     
     /** default constructor */
@@ -152,6 +154,16 @@ public class TaskTxt implements java.io.Serializable
     public void setLangCode(String langCode)
     {
         this.langCode = langCode;
+    }
+    
+    public String getTskTitle()
+    {
+        return tskTitle;
+    }
+    
+    public void setTskTitle(String tskTitle)
+    {
+        this.tskTitle = tskTitle;
     }
     
 }

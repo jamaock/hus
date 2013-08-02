@@ -12,26 +12,44 @@
 <meta http-equiv="description" content="new date 2013年7月13日">
 <base href="<%=basePath%>"> 
 <title>Insert title here</title>
-
-<link rel="STYLESHEET" type="text/css" href="uiframe/dhtmlx/tabbar/dhtmlxtabbar.css">
-<script type="text/javascript" src="uiframe/dhtmlx/tabbar/dhtmlxcommon.js"></script>
-<script type="text/javascript" src="uiframe/dhtmlx/tabbar/dhtmlxtabbar.js"></script>
-
-<body>
-<div id="a_tabbar" style="width:395px; height:390px;"></div>
-<div id='html_1'><img src="uiframe/dhtmlx/tabbar/common/page_a.gif"></div>
-<div id='html_2'><img src="uiframe/dhtmlx/tabbar/common/page_a.gif"></div>
-<script type="text/javascript">
-var tabbar = new dhtmlXTabBar("a_tabbar", "top");
-tabbar.setSkin('dhx_skyblue');
-tabbar.setImagePath("uiframe/dhtmlx/tabbar/imgs/");
-tabbar.addTab("a1", "Tab 1-1", "100px");
-tabbar.addTab("a2", "Tab 1-2", "100px");
-tabbar.addTab("a3", "Tab 1-3", "100px");
-tabbar.setContent("a1", "html_1");
-tabbar.setContent("a2", "html_2");
-tabbar.setContentHTML("a3", "<br/>The content can be set as <b>HTML</b> node or as <b>HTML</b> text.");
-tabbar.setTabActive("a1");
-
+<link rel="STYLESHEET" type="text/css" href="uiframe/dhtmlx/grid/codebase/dhtmlxgrid.css">
+<link rel="stylesheet" type="text/css" href="uiframe/dhtmlx/grid/codebase/skins/dhtmlxgrid_dhx_skyblue.css">
+<script  src="uiframe/dhtmlx/grid/codebase/dhtmlxcommon.js"></script>
+<script  src="uiframe/dhtmlx/grid/codebase/dhtmlxgrid.js"></script>        
+<script  src="uiframe/dhtmlx/grid/codebase/dhtmlxgridcell.js"></script>    
+ 
+<script>
+window.onload= function () {
+    mygrid = new dhtmlXGridObject('gridbox');
+    mygrid.setImagePath("uiframe/dhtmlx/grid/codebase/imgs/");
+    mygrid.setHeader("Sales Dynamic,Title,Description,Price,In Store,Shipping,Date of Publication");
+    mygrid.setInitWidths("120,150,*,50,80,80,150");
+    mygrid.setColAlign("right,left,left,right,center,right,center");
+    mygrid.setColTypes("dyn,ed,txt,price,ch,coro,ro");
+    mygrid.setColSorting("int,str,str,int,str,str,na");
+    mygrid.getCombo(5).put(1, "1 hour");
+    mygrid.getCombo(5).put(12, "12 hours");
+    mygrid.getCombo(5).put(24, "24 hours");
+    mygrid.getCombo(5).put(48, "2 Days"); 
+    mygrid.setSkin("light");
+    mygrid.init();
+    mygrid.loadXML("uiframe/dhtmlx/grid/samples/common/grid_big_18_styles_skins.xml");
+}
 </script>
-</body>
+ </head>
+ <body>
+<div style="margin:20px;">
+Choose skin to apply: 
+  <select onChange="mygrid.setSkin(this.value)">
+    <option value="sbdark">sb dark
+    <option value="gray">gray
+    <option value="mt">mt
+    <option value="xp">xp
+    <option value="clear">clear
+    <option value="modern">modern
+    <option value="light" >light
+
+    <option value="dhx_skyblue" selected>skyblue
+</select>
+</div>
+<div id="gridbox" style="width:100%;height:400px;background-color:white;"></div>

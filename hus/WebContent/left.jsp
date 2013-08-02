@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="uiframe/ztree/css/zTreeStyle.css" type="text/css">
 <script type="text/javascript" src="js/jquery/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="uiframe/ztree/js/jquery.ztree.all-3.5.js"></script>
+<script type="text/javascript" src="js/json2.js"></script>
 <SCRIPT type="text/javascript">
 	var curMenu = null, zTree_Menu = null;
 	var setting = {
@@ -80,8 +81,10 @@
 	    });
 	});
 	function addTab(tid,title,url){
-		alert(tid+"++"+title+"++"+url);
-		parent.frames["mainFrame"].addTab(tid,title,url);
+		var node = zTree_Menu.getNodeByTId("treeDemo_"+tid);
+		if (!node.isParent) {
+			parent.frames["mainFrame"].addTab(tid,title,url);
+		}
 	}
 </SCRIPT>
     <style type="text/css">

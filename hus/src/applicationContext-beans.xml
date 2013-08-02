@@ -14,4 +14,7 @@
 	<bean id="taskService" class="com.hus.erp.service.TaskMgr">
 	   <constructor-arg ref="baseDao"></constructor-arg>
 	</bean>
+	<bean id="quoteService" class="com.hus.erp.service.QuoteMgr">
+	   <constructor-arg ref="baseDao"></constructor-arg>
+	</bean>
 </beans>
