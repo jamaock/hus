@@ -13,11 +13,13 @@
 <base href="<%=basePath%>"> 
 <title>Insert title here</title>
 
-<link rel="stylesheet" href="uiframe/ztree/css/demo.css" type="text/css">
-<link rel="stylesheet" href="uiframe/ztree/css/zTreeStyle.css" type="text/css">
 <script type="text/javascript" src="js/jquery/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="uiframe/ztree/js/jquery.ztree.all-3.5.js"></script>
 <script type="text/javascript" src="js/json2.js"></script>
+<link href="uiframe/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="uiframe/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="uiframe/bootstrap/css/bootstrap-docs.css" rel="stylesheet">
+
 <SCRIPT type="text/javascript">
 	var curMenu = null, zTree_Menu = null;
 	var setting = {
@@ -79,6 +81,8 @@
 	    }, function() {
 	        treeObj.removeClass("showIcon");
 	    });
+	    $("#treeDemo_1").toggleClass("active");
+	    alert(1);
 	});
 	function addTab(tid,title,url){
 		var node = zTree_Menu.getNodeByTId("treeDemo_"+tid);
@@ -87,34 +91,14 @@
 		}
 	}
 </SCRIPT>
-    <style type="text/css">
-.ztree * {font-size: 10pt;font-family:"Microsoft Yahei",Verdana,Simsun,"Segoe UI Web Light","Segoe UI Light","Segoe UI Web Regular","Segoe UI","Segoe UI Symbol","Helvetica Neue",Arial}
-.ztree li ul{ margin:0; padding:0}
-.ztree li {line-height:30px;}
-.ztree li a {width:190px;height:30px;padding-top: 0px;}
-.ztree li a:hover {text-decoration:none; background-color: #E7E7E7;}
-.ztree li a span.button.switch {visibility:hidden}
-.ztree.showIcon li a span.button.switch {visibility:visible}
-.ztree li a.curSelectedNode {background-color:#D4D4D4;border:0;height:30px;}
-.ztree li span {line-height:30px;}
-.ztree li span.button {margin-top: -7px;}
-.ztree li span.button.switch {width: 16px;height: 16px;}
-
-.ztree li a.level0 span {font-size: 150%;font-weight: bold;}
-.ztree li span.button {background-image:url("uiframe/ztree/img/left_menuForOutLook.png"); *background-image:url("uiframe/ztree/img/left_menuForOutLook.gif")}
-.ztree li span.button.switch.level0 {width: 20px; height:20px}
-.ztree li span.button.switch.level1 {width: 20px; height:20px}
-.ztree li span.button.noline_open {background-position: 0 0;}
-.ztree li span.button.noline_close {background-position: -18px 0;}
-.ztree li span.button.noline_open.level0 {background-position: 0 -18px;}
-.ztree li span.button.noline_close.level0 {background-position: -18px -18px;}
-    </style>
+<style type="text/css">
+</style>
  </HEAD>
 
 <BODY>
-<div class="content_wrap">
-    <div class="zTreeDemoBackground left">
-        <ul id="treeDemo" class="ztree"></ul>
+<div class="row">
+            <div class="span3 bs-docs-sidebar">
+            <ul class="nav nav-list bs-docs-sidenav affix" id="treeDemo"></ul>
     </div>
 </div>
 </BODY>
