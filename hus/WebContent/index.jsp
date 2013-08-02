@@ -13,11 +13,5 @@
 <base href="<%=basePath%>"> 
 <title>HUS-ERP欢迎您</title>
 </head>
-    <frameset rows="70px,*" cols="*" frameborder="no" border="0" framespacing="0">
-        <frame src="head.jsp" id="topFrame" name="topFrame" scrolling="no" noresize="noresize"/>
-        <frameset cols="215px,*" frameborder="no" border="0" framespacing="0">
-            <frame src="left.jsp" id="leftFrame" name="leftFrame" scrolling="no" noresize="noresize"/>
-            <frame src="center.jsp" id="mainFrame" name="mainFrame" scrolling="no" noresize="noresize"/>
-        </frameset>
-    </frameset>
+   <body>the new one</body>
 </html>
