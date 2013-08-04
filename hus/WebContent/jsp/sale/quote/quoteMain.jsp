@@ -38,7 +38,7 @@ window.onload= function () {
 </script>
 
 </head>
-<body>
+<body style="margin: 0 auto;">
     <div style="background-color:#F0F0F0;height:120px;">
         <h2><span>报价单</span></h2>
         <button class="btn btn-danger">新增</button>

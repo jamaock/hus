@@ -13,9 +13,9 @@
 <base href="<%=basePath%>">
 <title>Insert title here</title>
 
-<link rel="STYLESHEET" type="text/css" href="uiframe/dhtmlx/tabbar/dhtmlxtabbar.css">
-<script type="text/javascript" src="uiframe/dhtmlx/tabbar/dhtmlxcommon.js"></script>
-<script type="text/javascript" src="uiframe/dhtmlx/tabbar/dhtmlxtabbar.js"></script>
+<link rel="STYLESHEET" type="text/css" href="uiframe/dhtmlx/tabbar/codebase/dhtmlxtabbar.css">
+<script type="text/javascript" src="uiframe/dhtmlx/tabbar/codebase/dhtmlxcommon.js"></script>
+<script type="text/javascript" src="uiframe/dhtmlx/tabbar/codebase/dhtmlxtabbar.js"></script>
 
 <script type="text/javascript">
 var tabbar=null;
@@ -23,7 +23,7 @@ window.onload=function(){
     tabbar = new dhtmlXTabBar("framecenter", "top");
     tabbar.setHrefMode("iframes-on-demand");
     tabbar.setSkin('dhx_skyblue');
-    tabbar.setImagePath("uiframe/dhtmlx/tabbar/imgs/");
+    tabbar.setImagePath("uiframe/dhtmlx/tabbar/codebase/imgs/");
     tabbar.enableForceHiding(1);
     
     tabbar.addTab("a1", "主页", "100px");
@@ -39,12 +39,6 @@ function addTab(tid,title,url){
 </script>
 <style type="text/css">
 body{margin-top:0;margin-left:auto;}
-/*设置tabbar不变*/
-.dhx_tablist_zone{position: fixed;}
-.dhxcont_main_content{overflow: visible;}
-/*  onload="this.height=0;var fdh=(this.Document?this.Document.body.scrollHeight:this.contentDocument.body.offsetHeight);this.height=(fdh>700?fdh:700)"
- */
- .dhxcont_main_content iframe{height: 10000%;}
 </style>
 </head>
 <body style="background-color: #FFF;">

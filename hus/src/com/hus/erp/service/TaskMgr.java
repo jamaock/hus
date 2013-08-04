@@ -21,7 +21,7 @@ public class TaskMgr implements TaskMgrImpl
     {
         String sql = "SELECT TA.TSK_ID,TA.TSK_PID,TA.TSK_URL,TXT.TSK_NAME,TXT.TSK_TITLE"
                 + " FROM TASK ta INNER JOIN TASK_TXT txt on TA.TSK_ID = TXT.TSK_ID"
-                + " WHERE TA.STATUS = 'A' and TXT.STATUS = 'A'";
+                + " WHERE TA.STATUS = 'A' and TXT.STATUS = 'A' limit 5";
         List<Object> dbList = baseDao.findBysql(sql);
         
         List<TreeNode> list = new ArrayList<TreeNode>();
@@ -32,13 +32,21 @@ public class TaskMgr implements TaskMgrImpl
             Object[] temp = (Object[])object;
             TreeNode tm = new TreeNode();
             tm.setId(temp[0].toString());
-            tm.setPId(temp[1] == null ? null : temp[1].toString());
-            url = temp[2].toString();
             tm.setName(temp[3].toString());
-            title = temp[4] == null ? null : temp[4].toString();
+            // pid 为空，根目录
+            if (temp[1] == null)
+            {
+                tm.setPId(null);
+            }
+            else
+            {
+                url = temp[2].toString();
+                title = temp[4] == null ? null : temp[4].toString();
+                tm.setPId(temp[1].toString());
+                tm.setClick("addTab('" + tm.getId() + "','" + title + "','" + url + "')");
+            }
             // tm.setFile(null);
             // tm.setUrl("testurl"+tm.getId());
-            tm.setClick("addTab('" + tm.getId() + "','" + title + "','" + url + "')");
             
             list.add(tm);
         }
