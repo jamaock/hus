@@ -12,14 +12,18 @@
 <meta http-equiv="description" content="new date 2013年8月2日">
 <base href="<%=basePath%>">
 <title>Insert title here</title>
+<link href="uiframe/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="uiframe/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="uiframe/bootstrap/css/bootstrap.css" type="text/css">
+<script type="text/javascript" src="js/jquery/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="uiframe/bootstrap/js/bootstrap.js"></script>
+
 <link rel="STYLESHEET" type="text/css" href="uiframe/dhtmlx/grid/codebase/dhtmlxgrid.css">
 <link rel="stylesheet" type="text/css" href="uiframe/dhtmlx/grid/codebase/skins/dhtmlxgrid_dhx_skyblue.css">
+<script src="uiframe/dhtmlx/grid/codebase/dhtmlxcommon.js"></script>
+<script src="uiframe/dhtmlx/grid/codebase/dhtmlxgrid.js"></script>
+<script src="uiframe/dhtmlx/grid/codebase/dhtmlxgridcell.js"></script>
 
-<script  src="uiframe/dhtmlx/grid/codebase/dhtmlxcommon.js"></script>
-<script  src="uiframe/dhtmlx/grid/codebase/dhtmlxgrid.js"></script>
-<script  src="uiframe/dhtmlx/grid/codebase/dhtmlxgridcell.js"></script>
 <script type="text/javascript">
 window.onload= function () {
     var hei=document.documentElement.clientHeight-50;
@@ -27,7 +31,7 @@ window.onload= function () {
 
     mygrid = new dhtmlXGridObject('gridbox');
     mygrid.setImagePath("uiframe/dhtmlx/grid/codebase/imgs/");
-    mygrid.setHeader("序号,报价单号,日期,客户,销售员,合计,状态");
+    mygrid.setHeader("序号,销售订单号,日期,客户,销售员,合计,状态");
     mygrid.setInitWidthsP("5,20,15,15,15,15,15");
     mygrid.setColAlign("center,left,left,center,center,left,center");
     mygrid.setColTypes("ch,dyn,ed,txt,price,coro,ro");
@@ -49,12 +53,63 @@ window.onload= function () {
     background-color:#7FFFD4;
     font-size:20px;
 }
+.bs-example {
+  position: relative;
+  background-color: #F0F0F0;
+  padding-top:39px;
+  height:45px;
+  width:50%;
+  float:left;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+/* Echo out a label for the example */
+.bs-example:after {
+  content: "销售订单";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  padding: 3px 7px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  color: #FF8000;
+  -webkit-border-radius: 4px 0 4px 0;
+     -moz-border-radius: 4px 0 4px 0;
+          border-radius: 4px 0 4px 0;
+}
+.bs-search{
+  position: relative;
+  background-color: #F0F0F0;
+  padding-top:39px;
+  height:45px;
+  width:50%;
+  float:left;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+
 </style>
 </head>
-<body style="margin: 0 auto;">
-    <div style="background-color:#F0F0F0;height:100px;">
-        <h2><span>报价单</span></h2>
-        <button class="btn btn-danger">新增</button>
+<body style="margin: 0">
+    <div class="bs-example">
+        <div class="span1">
+            <button class="btn btn-primary" onclick="window.location='<%=basePath%>jsp/sale/cos/addCos.jsp';">新增</button>
+        </div>
+        <div class="btn-group offset2" data-toggle="buttons-radio">  
+			<button type="button" class="btn">导出EXCEL</button>  
+			<button type="button" class="btn">导出PDF</button>  
+        </div>
+        <div class="btn-group">
+			<button type="button" class="btn btn-danger">删除</button>  
+        </div>
+    </div>
+    <div class="bs-search">
     </div>
     <div id="gridbox" style="width:98%;background-color:white;"></div>
 </body>

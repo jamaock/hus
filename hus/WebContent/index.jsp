@@ -12,9 +12,9 @@
 <meta http-equiv="description" content="new date 2013年7月13日">
 <base href="<%=basePath%>"> 
 <title>HUS-ERP欢迎您</title>
-<link href="uiframe/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="uiframe/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-<link href="uiframe/bootstrap/css/bootstrap-docs.css" rel="stylesheet">
+<link href="uiframe/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="uiframe/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+
 <link rel="stylesheet" href="uiframe/ztree/css/zTreeStyle.css" type="text/css">
 
 <script type="text/javascript" src="js/jquery/jquery-1.8.3.js"></script>
@@ -81,7 +81,7 @@ window.onload=function(){
     var hei=document.documentElement.clientHeight-50;
     $("#sidebar-menu").css("height",hei+"px");
     $("#centerContainer").css("height",hei+"px");
-    $("#centerContainer").css("width", (document.body.clientWidth -300) + "px");
+    $("#centerContainer").css("width", (wid -300) + "px");
     //tree
     var treeObj = $("#treeDemo");
     $.fn.zTree.init(treeObj, setting);
@@ -94,11 +94,12 @@ window.onload=function(){
     tabbar.setSkin('dhx_skyblue');
     tabbar.setImagePath("uiframe/dhtmlx/tabbar/codebase/imgs/");
     tabbar.enableForceHiding(1);
-    
+    tabbar.enableTabCloseButton(true);
     //tabbar.enableAutoSize(false, true);
 
     tabbar.addTab("a1", "主页", "100px");
-    tabbar.setContentHref("a1", "initMain.jsp");
+    //tabbar.setContentHref("a1", "initMain.jsp");
+    tabbar.setContentHref("a1", "jsp/sale/quote/quoteMain.jsp");
     
     tabbar.setTabActive("a1");
 };
@@ -113,7 +114,8 @@ function addTab(tid,title,url){
 }
 </script>
 <style type="text/css">
-    a{cursor: pointer;}
+        body{padding-top: 40px;}
+        a{cursor: pointer;}
     /*左侧菜单*/
         .sidebar-menu{
             border-right: 1px solid #c4c8cb;float: left;
@@ -218,7 +220,7 @@ function addTab(tid,title,url){
         </div>
     </div>
     <!-- ========= left tree menu ============ -->
-    <div style="margin-left: 5px;">
+    <div style="margin-left: 5px;  padding-top:1px;">
         <!--Sidebar-->
         <div class="sidebar-menu">
             <ul class="nav nav-list" id="treeDemo"></ul>
