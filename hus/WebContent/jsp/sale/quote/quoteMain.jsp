@@ -32,7 +32,9 @@ window.onload= function () {
     mygrid.setColAlign("center,left,left,center,center,left,center");
     mygrid.setColTypes("ch,dyn,ed,txt,price,coro,ro");
     mygrid.setColSorting("int,str,str,int,str,str,na");
-    mygrid.setSkin("modern");
+    mygrid.setSkin("dhx_terrace");
+    //mygrid.enablePaging(true,10,5,"pagingArea",true,"recinfoArea");
+
     //设置 行 随鼠标变色
     //mygrid.enableLightMouseNavigation(true);
     mygrid.enableRowsHover(true,"grid_hover");

@@ -19,7 +19,7 @@ public class TaskMgr implements TaskMgrImpl
     
     public List<TreeNode> findLeftMenuByLogin(Login login)
     {
-        String sql = "SELECT TA.TSK_ID,TA.TSK_PID,TA.TSK_URL,TXT.TSK_NAME,TXT.TSK_TITLE"
+        String sql = "SELECT TA.TSK_ID,TA.TSK_PID,TA.TSK_URL,TXT.TSK_NAME,'dd'"
                 + " FROM TASK ta INNER JOIN TASK_TXT txt on TA.TSK_ID = TXT.TSK_ID"
                 + " WHERE TA.STATUS = 'A' and TXT.STATUS = 'A' limit 5";
         List<Object> dbList = baseDao.findBysql(sql);

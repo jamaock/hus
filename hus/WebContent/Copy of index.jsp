@@ -86,7 +86,7 @@ window.onload=function(){
     var treeObj = $("#treeDemo");
     $.fn.zTree.init(treeObj, setting);
     zTree_Menu = $.fn.zTree.getZTreeObj("treeDemo");
-    /* //Tab
+    //Tab
     tabbar = new dhtmlXTabBar("centerContainer", "top");
     //tabbar.setHrefMode("ajax-html");
 
@@ -101,28 +101,7 @@ window.onload=function(){
     //tabbar.setContentHref("a1", "initMain.jsp");
     tabbar.setContentHref("a1", "jsp/sale/quote/quoteMain.jsp");
     
-    tabbar.setTabActive("a1"); */
-    dhtmlx.image_path='./codebase/imgs/';
-
-    dhtmlx.skin = 'dhx_terrace';
-    var main_layout = new dhtmlXLayoutObject("centerContainer", '1C', 'dhx_terrace');
-
-    var huanying = main_layout.cells('a');
-    huanying.setText('欢迎您admin');
-    huanying.setHeight('100');
-    var tabbar_2 = huanying.attachTabbar();
-    tabbar_2.setImagePath('./codebase/skins/terrace_transparent/imgs/');
-    tabbar_2.addTab('tab_2','tab_2','');
-    var tab_2 = tabbar_2.cells('tab_2');
-    tabbar_2.setTabActive('tab_2');
-
-
-    tabbar_2.addTab('tab_3','tab_3','');
-    var tab_3 = tabbar_2.cells('tab_3');
-
-
-    tabbar_2.addTab('tab_4','tab_4','');
-    var tab_4 = tabbar_2.cells('tab_4');
+    tabbar.setTabActive("a1");
 };
 
 function addTab(tid,title,url){
