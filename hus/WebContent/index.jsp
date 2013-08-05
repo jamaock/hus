@@ -86,12 +86,12 @@ window.onload=function(){
     var treeObj = $("#treeDemo");
     $.fn.zTree.init(treeObj, setting);
     zTree_Menu = $.fn.zTree.getZTreeObj("treeDemo");
-    /* //Tab
+     //Tab
     tabbar = new dhtmlXTabBar("centerContainer", "top");
     //tabbar.setHrefMode("ajax-html");
 
     tabbar.setHrefMode("iframes-on-demand");
-    tabbar.setSkin('dhx_blue');
+    tabbar.setSkin('dhx_terrace');
     tabbar.setImagePath("uiframe/dhtmlx/tabbar/codebase/imgs/");
     tabbar.enableForceHiding(1);
     tabbar.enableTabCloseButton(true);
@@ -101,10 +101,10 @@ window.onload=function(){
     //tabbar.setContentHref("a1", "initMain.jsp");
     tabbar.setContentHref("a1", "jsp/sale/quote/quoteMain.jsp");
     
-    tabbar.setTabActive("a1"); */
+    tabbar.setTabActive("a1"); 
     dhtmlx.image_path='./codebase/imgs/';
 
-    dhtmlx.skin = 'dhx_terrace';
+    /* dhtmlx.skin = 'dhx_terrace';
     var main_layout = new dhtmlXLayoutObject("centerContainer", '1C', 'dhx_terrace');
 
     var huanying = main_layout.cells('a');
@@ -122,7 +122,7 @@ window.onload=function(){
 
 
     tabbar_2.addTab('tab_4','tab_4','');
-    var tab_4 = tabbar_2.cells('tab_4');
+    var tab_4 = tabbar_2.cells('tab_4'); */
 };
 
 function addTab(tid,title,url){
