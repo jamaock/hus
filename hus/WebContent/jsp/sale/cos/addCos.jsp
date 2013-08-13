@@ -2,7 +2,7 @@
 <%  String path = request.getContextPath();
     String basePath = request.getScheme() + "://"+ request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -58,6 +58,15 @@ html,body {
 </style>
 </head>
 <body>
+        <div class="btn-group" style="float: right;">
+            <a class="btn btn-info">刷新</a>
+            <a class="btn btn-info">关闭</a>
+            <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#"><i class="icon-pencil"></i> 关闭其他</a></li>
+                <li><a href="#"><i class="icon-trash"></i> 关闭所有 </a></li>
+            </ul>
+        </div>
 <div class="navbar">
     <div class="navbar-inner">
         <button class="btn btn-danger">保存</button>
@@ -75,10 +84,10 @@ html,body {
         <form>
 	        <div class="ord_top" style="height: 100px ;background-color: #F0F0F0;">
 	           <div class="row-fluid">
-        <div class="span8">
-	        <h2 class="help-inline">销售订单</h2>
+        <div class="span8" style="font-family: Microsoft YaHei;">
+	        <h3 class="help-inline">销售订单</h3>
             <!-- <span class=" h1 help-inline">销售订单</span> -->
-	        <input type="text" style="margin-top: 15px;">
+	        <input type="text" style="margin-top: 15px; border: 0px;" value="SO20130812-010">
         </div>
         <div class="span4"  style="margin-top: 15px;">
 	        <span  class="help-inline label label-info" style="margin-top: -1px;">货主</span>

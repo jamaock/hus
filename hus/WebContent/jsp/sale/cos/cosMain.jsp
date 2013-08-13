@@ -2,7 +2,7 @@
 <%  String path = request.getContextPath();
     String basePath = request.getScheme() + "://"+ request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -97,6 +97,8 @@ window.onload= function () {
 </style>
 </head>
 <body style="margin: 0">
+    <%-- <%@include file="/baseHtml/toolBtn.html"%> --%>
+    <%@include file="/baseHtml/toolBtn.html"%>
     <div class="bs-example">
         <div class="span1">
             <button class="btn btn-primary" onclick="window.location='<%=basePath%>jsp/sale/cos/addCos.jsp';">新增</button>

@@ -81,7 +81,7 @@ window.onload=function(){
     var hei=document.documentElement.clientHeight-50;
     $("#sidebar-menu").css("height",hei+"px");
     $("#centerContainer").css("height",hei+"px");
-    $("#centerContainer").css("width", (wid -300) + "px");
+    $("#centerContainer").css("width", ((wid<1000?1000:wid) -300) + "px");
     //tree
     var treeObj = $("#treeDemo");
     $.fn.zTree.init(treeObj, setting);
@@ -94,7 +94,6 @@ window.onload=function(){
     tabbar.setSkin('dhx_terrace');
     tabbar.setImagePath("uiframe/dhtmlx/tabbar/codebase/imgs/");
     tabbar.enableForceHiding(1);
-    tabbar.enableTabCloseButton(true);
     //tabbar.enableAutoSize(false, true);
 
     tabbar.addTab("a1", "主页", "100px");
@@ -127,10 +126,12 @@ window.onload=function(){
 
 function addTab(tid,title,url){
     var tabCells = tabbar.getAllTabs();
-    if ($.inArray(tid, tabCells) == -1) {
+   /*  if ($.inArray(tid, tabCells) == -1) {
         tabbar.addTab(tid, title, "100px");
         tabbar.setContentHref(tid,url);
-	}
+	} */
+    tabbar.addTab(tid, title, "100px");
+    tabbar.setContentHref(tid,url);
     tabbar.setTabActive(tid);
 }
 </script>
@@ -208,6 +209,9 @@ function addTab(tid,title,url){
             padding: 0px;
             margin: 0px;
         }
+        .dhx_tab_scroll_left {
+background-color: red;
+}
 </style>
 </head>
 <body>
@@ -246,10 +250,18 @@ function addTab(tid,title,url){
         <div class="sidebar-menu">
             <ul class="nav nav-list" id="treeDemo"></ul>
         </div>
+    </div>
         <!--content-->
         <div style="float: left;">
             <div id="centerContainer" style="height: 595px;"></div>
         </div>
-    </div>
+        
+<div class="btn-group btn-group-vertical" style="float: right;">
+    <a class="btn btn-info" href="javascript:void(0);"><i class="icon-refresh"></i>刷新</a>
+    <a class="btn btn-info" href="javascript:void(0);"><i class="icon-off"></i>关闭</a>
+    <a class="btn btn-info" href="javascript:void(0);">关闭其他</a>
+    <a class="btn btn-info" href="javascript:void(0);">关闭所有</a>
+</div>
+        
 </body>
 </html>
